@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<!--
+CSS
+Cascading Style Sheets
+
+CSS has been adopted by all major browsers and allows you to control:
+- color
+- fonts
+- positioning
+- spacing
+- sizing
+- decorations
+- transitions
+
+There are three main ways to apply CSS styling. You can apply inline styles directly to HTML elements with the style attribute.
+Alternatively, you can place CSS rules within style tags in an HTML document. Finally, you can write CSS rules in an external
+style sheet, then reference that file in the HTML document. Even though the first two options have their use cases,
+most developers prefer external style sheets because they keep the styles separate from the HTML elements.
+This improves the readability and reusability of your code.
+
+Get some Google fonts:
+https://developers.google.com/fonts/docs/getting_started
+
+HTML tags:
+http://www.myhtml5tutorials.com/index.html
+
+CSS Tutorials:
+https://www.w3schools.com/css/default.asp
+https://learn.freecodecamp.org/responsive-web-design/basic-css
+
+Selectors of CSS: see wikipedia
+https://de.wikipedia.org/wiki/Cascading_Style_Sheets
+
+-->
+
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Google fonts and font animations: -->
+		<link href="https://fonts.googleapis.com/css?family=Tangerine|Caveat+BrushActor|Advent+Pro|Alegreya+Sans+SC|Allerta+Stencil|Anaheim|Antic|Archivo|Arimo|Assistant|Averia+Sans+Libre|Barlow|Belleza|Bubbler+One|Buda:300|Cabin|Cambay|Cantarell|Carrois+Gothic|Catamaran|Caudex|Chau+Philomene+One|Cuprum|Cutive+Mono|Didact+Gothic|Duru+Sans|East+Sea+Dokdo|Economica|Encode+Sans+Condensed|Expletus+Sans|Fauna+One|Forum|Fresca|Gafata|Galdeano|Gothic+A1|Harmattan|Heebo|Hind|Hind+Siliguri|Hind+Vadodara|IM+Fell+DW+Pica+SC|IM+Fell+Great+Primer+SC|Jaldi|Julee|Karla|Kreon|Lateef|Mada|Mallanna|Mandali|Marcellus|Marmelad|Martel+Sans|Mate+SC|Mirza|Molengo|Mukta+Mahee|Muli|NTR|Nanum+Gothic+Coding|News+Cycle|Nova+Flat|Numans|Open+Sans|Overpass|Oxygen|PT+Sans+Narrow|Padauk|Palanquin|Pavanam|Pontano+Sans|Proza+Libre|Questrial|Quicksand|Rajdhani|Reem+Kufi|Roboto|Ropa+Sans|Rosario|Rubik|Ruthie|Saira+Semi+Condensed|Sarala|Scada|Shanti|Slabo+13px|Source+Sans+Pro|Spinnaker|Sree+Krushnadevaraya|Sriracha|Tajawal|Telex|Tenor+Sans|Text+Me+One|Trykker|Unna|Varela+Round|Yantramanav|Lato|Montserrat&effect=fire-animation|neon" rel="stylesheet">
+		<!-- Google icons: -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<title>Basic CSS</title>
+
+		<!-- CSS -->
+		<style>
+			/* on the left side of style: selector (element, id, class, attribute and more). */
+			body {
+				background-color: rgb(60, 60, 60);
+				color: whitesmoke;
+				/*font-family: 'Lato', sans-serif;*/
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 100%;
+				background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/16/Misty_morning03.jpg);
+				background-position:center top;
+				background-repeat:repeat-y;
+				background-attachment: fixed;
+				/* or as shorthand property. Note that the properties have a special order.*/
+				background: rgb(60, 60, 60) url(https://upload.wikimedia.org/wikipedia/commons/1/16/Misty_morning03.jpg) repeat-y fixed center top;
+				}
+			h1 {font-size: 3em;}
+			h2,p {text-align: center;}					/* = Element selectors. You can group selectors! */
+			a {text-decoration-line: none;}		 		/* Should remove the undeline, e. g. from links. */
+			a:link {color: rgb(200, 0, 0);}				/* (a=anchor= link) :link = different states of a. */
+			a:visited {color: rgb(200, 0, 0);}
+			a:hover {color: darkred;}
+			h2 {font-size: 2em;}
+			h3 {
+				text-shadow: 1px 2px tomato;
+				font-size: 1.75em;
+				text-indent: 30px;
+				/*text-transform: uppercase;*/
+				font-variant: small-caps;
+			}
+			p {
+				background-color:rgba(255, 92, 71, 0.5);	/* last value is transparency (alpha channel). */
+				/* You can also use HEX values (#ff6347) or hue-saturation-lightness: hsl(9, 100%, 64%).
+				rgb and hsl have an optional extension for transparency: rgba, hsla. */
+				font-size: 1.2em;
+				padding: 30px;
+				border: 1px solid black;
+				border-radius: 10px;
+				text-align: left;
+			}
+			span {
+				background-color: lightgrey;
+				color: black;
+				padding: 0 8px;
+				border: 1px inset lightgrey;
+				font-size: 0.9em;
+				display: inline-block;
+				margin: 2px;
+			}
+			img {
+				border:4px groove Tomato;
+				border-radius: 10px;
+			}
+			ul {
+				list-style-type: disc;
+				list-style-position: inside;
+			}
+			ol {list-style-position: inside;}
+			table {
+				border-collapse:collapse;
+				text-align: left;
+				border: 60px;
+			}
+			th {
+				height:50px;
+				background-color: tomato;
+			}
+			/* Zebra-stribed tables: */
+			tr:nth-child(odd) {background-color: rgb(60, 60, 60, 0.8);}		/* :nth-child() is a structural pseudo class. */
+			
+			/* All CSS Pesudo Classes: https://www.w3schools.com/css/css_pseudo_classes.asp */
+
+			th, td {
+				padding: 10px;
+				border-bottom: 1px solid #ddd;
+			}
+			td:hover {					/* :hover etc. are pseudo classes. Pseudo-class names are not case-sensitive.  */
+				font-size: 1.7em;
+				background-color: rgb(255, 99, 71, 0.7)
+			}
+			
+			#padding {					 /* This is an ID selector. It's used to select one unique element! ID of an element should be unique. */
+				padding: 50px;				/* padding is space around an element's content, inside of the borders. */
+			}
+			p.tangerine {			/* .tangerine is a Class. Here it's specified that that only <p> elements will be affected. */
+				font-family: Tangerine, sans-serif;
+				font-size: 30px;
+			}
+			p.margin {
+				margin:100px 50px;		/* margin is space around elements. If 2 values: 1st is top and bottom, 2nd is left and right. */
+			}
+			.sticky-header {
+				text-align: center;
+				background-color: rgb(30,30,30, 0.9);
+				position: sticky;
+				top: 0;
+				width: 100%;
+				padding: 30px;
+				min-width: 500px;
+			}
+			div.maxwidth-centered {
+				max-width: 1600px;
+				align-content: center;
+				padding: 0px 100px;
+				box-sizing: border-box;		/* The box-sizing property causes the element to maintain its width; if you increase the padding, the available content space will decrease. */
+				border: 1px solid black;
+				margin: auto;				/* Center aligning via margin:auto has no effect if the width property is not set or set to 100%! */
+			}
+			.align-right {			/* (Horizontal align.) you can align via position, absolute or 'margin: auto' (=centered) for example. */
+				float: right; /* overlapping with next elements... */
+			}
+		</style>		
+	</head>
+
+	<!-- BODY -->
+
+	<body>
+		<!-- A Header, I want it to be sticky/fixed at the top -->
+		<div class="sticky-header">
+			<!-- Asigned to several classes. Use a whitespace between classes: -->
+			<h1 class="font-effect-fire-animation tomato-transparent">h1 headline, me title! <i class="material-icons" style="font-size: 50px">thumb_up</i></h1>
+			<h2>I am h2, me subtitle.</h2>
+		</div>
+
+		<!-- The 'body' of the body...-->
+		<div class="maxwidth-centered">
+			<h3>I am h3, like a section title.</h3>
+
+			<!-- Paragraphs -->
+			<p>
+				<b>I am a paragraph.</b><br><br>
+				Note that when importing Google fonts that 'bold' isn't selected by default. The <span>&lt;b&gt;&lt;/b&gt;</span> tags won't have any impact if bold isn't imported.<br><br>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+				invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+				At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+				no sea takimata sanctus est Lorem ipsum dolor sit amet.
+			</p>
+
+			<!-- About display and positioning -->
+			<h3>
+				About display and positioning
+			</h3>
+			<p>
+				The <span>display</span> property is the most important CSS property for controlling layout.<br>
+				Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is <span>block</span> or <span>inline</span>.<br>
+				A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).<br><br>
+				An inline element does not start on a new line and only takes up as much width as necessary.<br>
+				You can change it with property <span>display</span>, e. g. <span>display:none</span> (commonly used with JavaScript to hide an show elements without deleting and recreating them).
+			</p>
+			<div style="overflow:auto">
+				<div style="float:left;padding:0 50px">
+					<h4>Examples of block-level elements:</h4>
+					<ul>
+						<li>&lt;div&gt;</li>
+						<li>&lt;h1&gt; bis &lt;h6&gt;</li>
+						<li>&lt;p&gt;</li>
+						<li>&lt;form&gt;</li>
+						<li>&lt;header&gt;</li>
+						<li>&lt;footer&gt;</li>
+						<li>&lt;section&gt;</li>
+					</ul>
+				</div>
+				<div style="padding:0 50px">
+					<h4>Examples of inline elements:</h4>
+					<ul>
+						<li>&lt;span&gt;</li>
+						<li>&lt;a&gt;</li>
+						<li>&lt;img&gt;</li>
+					</ul>
+				</div>
+			</div>
+			<p>
+				With <span>display</span> you can change to block or inline, remove or hide elements.<br>
+				You can also set width so block-level elements won't strech to the edges of its container. When setting <span>margin</span> to <span>auto</span> then it will will horizontally centered.
+				Center aligning via <span>margin:auto</span> has no effect if the width property is not set or set to 100%!<br>
+				You will maybe also need <span>max-width</span> and <span>min-width</span> because of browser-resizing.<br>
+				The <span>position</span> property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).<br>
+				Set <span>overflow</span> property if contents of a container are larger than the container.<br>
+				Use <span>float</span> and <span>clear</span> properties for positioning and layout and to set how elements will float.
+				E. g. <span>float</span> can be used to wrap text around images.<br><br>
+				The <span>box-sizing</span> property allows us to include the padding and border in an element's total width and height.
+				If you set <span>box-sizing: border-box;</span> on an element padding and border are included in the width and height:
+				The box-sizing property causes the element to maintain its width; if you increase the padding, the available content space will decrease.
+				Otherwise properties like <span>padding</span> and <span>borders</span> would enlarge the box. (<span>width:100px; padding:20px</span> =120px)
+
+
+
+
+			</p>
+				
+				
+			<p id="padding" class="margin align-right tangerine" style="text-align:justify;max-width:300px">
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+				invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
+				<a href="http://hmpg.net/" target="_blank"> Underline removed from this link by "text-decoration: none"</a><br>
+				At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+				no sea takimata sanctus est Lorem ipsum dolor sit amet.
+			</p>
+				<hr>
+			<br>
+
+			<!-- Linked image -->
+			<div style="text-align: center">
+				<a href="http://via.placeholder.com" target="_blank"><img src="http://via.placeholder.com/350x150" alt="placeholder.com" border="4"></a>
+				<br><br>
+				<a href="https://github.com/" target="_blank" class="font-effect-neon">I am a hyperlink.</a>
+			</div>
+
+			<br><br><hr><br>
+			
+			<!-- Basic table -->
+			<div>
+				<table border="2" cellspacing="0">
+					<tr>				<!-- table row -->
+						<th></th>
+						<th>table header</th>
+						<th colspan="2">table header</th>
+						<th>table header</th>
+					</tr>
+					<tr>
+						<td>table data</td>
+						<td rowspan="3">table data</td>
+						<td>table data</td>
+						<td>table data</td>
+						<td>table data</td>
+					<tr>
+							<td>table data</td>
+							<td>table data</td>
+							<td>table data</td>
+							<td>table data</td>
+					<tr>
+							<td>table data</td>
+							<td>table data</td>
+							<td>table data</td>
+							<td>table data</td>
+					</tr>
+				</table>
+			</div>
+			<br><br><hr><br>
+			
+			<!-- Basic list -->
+			<div style="margin-left:30px;border-left:6px solid red">			<!-- This is an Inline style -->
+				<ol>
+					<li>list entry
+						<ul>
+							<li>list entry</li>
+							<li>list entry</li>
+							<li>list entry</li>
+						</ul>
+					</li>
+					<li>list entry</li>
+					<li>list entry</li>
+					<li>list entry</li>
+				</ol>
+			</div>
+			<br><br><hr><br>
+			
+			<!-- Favourite and interesting Google fonts -->
+			<table>
+				<tr>
+					<th colspan="2">100 Interesting Google fonts favoured by me</th>
+				</tr>
+				<tr style="font-family: 'IM Fell Great Primer SC', serif;">
+					<td>IM Fell Great Primer SC</td>
+					<td>Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand sit by the fire annoy kitten brother with poking eat all the power cords soft kitty warm kitty little ball of furr. Meowing chowing and wowing favor packaging over toy. Stare at the wall, play with food and get confused by dust jump five feet high and sideways when a shadow moves. Eat the rubberband need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me kitty poochy purr human is washing you why halp oh the horror flee scratch hiss bite.</td>
+				</tr>
+				<tr style="font-family: 'Trykker', serif;">
+					<td>Trykker</td>
+					<td>Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand sit by the fire annoy kitten brother with poking eat all the power cords soft kitty warm kitty little ball of furr. Meowing chowing and wowing favor packaging over toy. Stare at the wall, play with food and get confused by dust jump five feet high and sideways when a shadow moves. Eat the rubberband need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me kitty poochy purr human is washing you why halp oh the horror flee scratch hiss bite.</td>
+				</tr>
+				<tr style="font-family: 'Nova Flat', cursive;">
+					<td>Nova Flat</td>
+					<td>Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand sit by the fire annoy kitten brother with poking eat all the power cords soft kitty warm kitty little ball of furr. Meowing chowing and wowing favor packaging over toy. Stare at the wall, play with food and get confused by dust jump five feet high and sideways when a shadow moves. Eat the rubberband need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me kitty poochy purr human is washing you why halp oh the horror flee scratch hiss bite.</td>
+				</tr>
+				<tr style="font-family: 'IM Fell DW Pica SC', serif;">
+					<td>IM Fell DW Pica SC</td>
+					<td>Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand sit by the fire annoy kitten brother with poking eat all the power cords soft kitty warm kitty little ball of furr. Meowing chowing and wowing favor packaging over toy. Stare at the wall, play with food and get confused by dust jump five feet high and sideways when a shadow moves. Eat the rubberband need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me kitty poochy purr human is washing you why halp oh the horror flee scratch hiss bite.</td>
+				</tr>
+				<tr style="font-family: 'Sree Krushnadevaraya', serif;">
+					<td>Sree Krushnadevaraya</td>
+					<td>Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand sit by the fire annoy kitten brother with poking eat all the power cords soft kitty warm kitty little ball of furr. Meowing chowing and wowing favor packaging over toy. Stare at the wall, play with food and get confused by dust jump five feet high and sideways when a shadow moves. Eat the rubberband need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me kitty poochy purr human is washing you why halp oh the horror flee scratch hiss bite.</td>
+				</tr>
+				
+				
+				
+			</table>
+
+	</div>
+	</body>
+
+</html>
+
+<!--
+font-family: 'IM Fell Great Primer SC', serif;
+font-family: 'Trykker', serif;
+font-family: 'Nova Flat', cursive;
+font-family: 'IM Fell DW Pica SC', serif;
+font-family: 'Sree Krushnadevaraya', serif;
+font-family: 'Galdeano', sans-serif;
+font-family: 'Ruthie', cursive;
+font-family: 'Julee', cursive;
+font-family: 'Mukta Mahee', sans-serif;
+font-family: 'Fresca', sans-serif;
+font-family: 'Bubbler One', sans-serif;
+font-family: 'Mandali', sans-serif;
+font-family: 'Buda', cursive;
+font-family: 'Text Me One', sans-serif;
+font-family: 'Pavanam', sans-serif;
+font-family: 'Numans', sans-serif;
+font-family: 'Padauk', sans-serif;
+font-family: 'Mate SC', serif;
+font-family: 'Mallanna', sans-serif;
+font-family: 'Averia Sans Libre', cursive;
+font-family: 'Chau Philomene One', sans-serif;
+font-family: 'Shanti', sans-serif;
+font-family: 'Sriracha', cursive;
+font-family: 'NTR', sans-serif;
+font-family: 'Harmattan', sans-serif;
+font-family: 'Gafata', sans-serif;
+font-family: 'Mirza', cursive;
+font-family: 'Expletus Sans', cursive;
+font-family: 'Duru Sans', sans-serif;
+font-family: 'Cutive Mono', monospace;
+font-family: 'Proza Libre', sans-serif;
+font-family: 'Cambay', sans-serif;
+font-family: 'Belleza', sans-serif;
+font-family: 'Anaheim', sans-serif;
+font-family: 'Unna', serif;
+font-family: 'Caudex', serif;
+font-family: 'Rosario', sans-serif;
+font-family: 'Saira Semi Condensed', sans-serif;
+font-family: 'Mada', sans-serif;
+font-family: 'Gothic A1', sans-serif;
+font-family: 'East Sea Dokdo', cursive;
+font-family: 'Tenor Sans', sans-serif;
+font-family: 'Marmelad', sans-serif;
+font-family: 'Martel Sans', sans-serif;
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Nanum Gothic Coding', monospace;
+font-family: 'Allerta Stencil', sans-serif;
+font-family: 'Telex', sans-serif;
+font-family: 'Carrois Gothic', sans-serif;
+font-family: 'Fauna One', serif;
+font-family: 'Archivo', sans-serif;
+font-family: 'Antic', sans-serif;
+font-family: 'Lateef', cursive;
+font-family: 'Marcellus', serif;
+font-family: 'Molengo', sans-serif;
+font-family: 'Slabo 13px', serif;
+font-family: 'Spinnaker', sans-serif;
+font-family: 'Palanquin', sans-serif;
+font-family: 'Tajawal', sans-serif;
+font-family: 'Jaldi', sans-serif;
+font-family: 'Sarala', sans-serif;
+font-family: 'Scada', sans-serif;
+font-family: 'Actor', sans-serif;
+font-family: 'Overpass', sans-serif;
+font-family: 'Advent Pro', sans-serif;
+font-family: 'Hind Vadodara', sans-serif;
+font-family: 'Forum', cursive;
+font-family: 'Kreon', serif;
+font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'Cantarell', sans-serif;
+font-family: 'Economica', sans-serif;
+font-family: 'Didact Gothic', sans-serif;
+font-family: 'Pontano Sans', sans-serif;
+font-family: 'Barlow', sans-serif;
+font-family: 'News Cycle', sans-serif;
+font-family: 'Yantramanav', sans-serif;
+font-family: 'Assistant', sans-serif;
+font-family: 'Catamaran', sans-serif;
+font-family: 'Heebo', sans-serif;
+font-family: 'Cuprum', sans-serif;
+font-family: 'Ropa Sans', sans-serif;
+font-family: 'Encode Sans Condensed', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'Hind Siliguri', sans-serif;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Karla', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Hind', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Cabin', sans-serif;
+font-family: 'Oxygen', sans-serif;
+font-family: 'PT Sans Narrow', sans-serif;
+font-family: 'Arimo', sans-serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+-->

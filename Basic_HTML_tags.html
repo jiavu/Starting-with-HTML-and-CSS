@@ -1,0 +1,124 @@
+<!DOCTYPE html>				<!-- You need the DOCTYPE tag because it tells the browser that it is an html file document. This tag is for HTML5 -->
+
+<!--
+Maybe use Visual Studio Code for editing.
+
+Hyper Text Markup Language
+HTML is not a programming language but a MARKUP (Auszeichnungs-) language.
+
+https://www.w3schools.com/tags/default.asp
+
+HTML tags:
+http://www.myhtml5tutorials.com/index.html
+
+-->
+
+
+<html>								<!-- The <html> tag makes sure that all the content inside it will inherit some necessary characteristics of html. -->
+	<head>							<!-- Contains informations about the website and it's also where you load css and Javascript files. -->
+		<meta charset="utf-8">		<!-- utf-8 is a type of unicode in coding. We need encoding because we need to transit the chars to bytes -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">	<!-- important for responsive websites so that they can be displayed properly on different kind of devices. initial-scale: sets the zoom of the website. -->
+		<title> Basic HTML tags	</title>		<!-- will be displayed as tab name -->
+	</head>
+
+	<body>
+		<h1>I am a headline (h1). I have 5 smaller brothers. Use me as a title!</h1>
+		<h2>I am h2, use me as a subtitle.</h2>
+		<h3>Usually using h1 and h2, sometimes h3 as a section title.</h3>
+		<p>							<!-- Paragraph -->
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+			no sea takimata sanctus est Lorem ipsum dolor sit amet.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			<br>	<!-- linebreak -->
+					<!--Tags like <br> that don't need closing tags are called 'void elements' and 'self closing'-->
+			At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+			no sea takimata sanctus est Lorem ipsum dolor sit amet.<br><br>
+			
+			<b>I am bold!</b>				<!-- bold --> <br>
+			<i>I am italic!</i>				<!-- italic --> <br>
+			<em>I am emphasized!</em>		<!-- emphasized. The default for <em> is italic. --> <br>
+			<strong>I am strong!</strong>	<!-- strong --> <br>
+											<!-- <strong> tag is basically the same as a bold tag. -->
+			
+			<hr>		<!-- horizontal line (rule?) -->
+
+			<a href="https://github.com/" target="_blank">Ich bin ein Link.</a>
+			<!-- <a> = anchor, link tag that connects 2 websites
+			href = hypertext reference. // Open in new tab: target="_blank" -->
+		</p>
+
+		<img src="http://via.placeholder.com/350x150">
+		<!-- Image (it's a vault tag). It needs a src (=source) attribute and the URL =path to the file.
+			URL = (uniform) ressource locator.
+			The URL can also be just the file name, if file is in same directory as the .html file: -->
+		<img src="350x150.png" border="10">
+		<a href="http://via.placeholder.com" target="_blank"><img src="http://via.placeholder.com/350x150"></a>
+		<img alt="the text for screen readers. Displayed when image fails to load.">
+		
+		<br>
+		Das dritte Bild ist verlinkt.
+		<br><br><hr><br>
+		<!-- Lists: unordered and ordered -->
+		<ul>				<!-- unordered list -->
+			<li>list entry</li>
+			<li>list entry</li>
+			<li>list entry</li>
+			<li>list entry</li>
+		</ul>
+		<ol>				<!-- ordered list -->
+			<li>list entry</li>
+			<li>list entry</li>
+			<li>list entry</li>
+			<li>list entry</li>
+		</ol>
+		<ol>				<!-- nested list -->
+			<li>list entry
+				<ul>
+					<li>list entry</li>
+					<li>list entry</li>
+					<li>list entry</li>
+				</ul>
+			</li>
+			<li>list entry</li>
+			<li>list entry</li>
+			<li>list entry</li>
+		</ol>
+
+		<br><br><hr><br>
+
+		<!-- Tables are a good way to organize data into rows and columns: -->
+
+		<table border="2" cellpadding="10" cellspacing="0">
+			<tr>				<!-- table row -->
+				<th></th>
+				<th>table header</th>
+				<th colspan="2">table header</th>
+				<th>table header</th>
+			</tr>
+			<tr>
+				<td>table data</td>
+				<td rowspan="3">table data</td>
+				<td>table data</td>
+				<td>table data</td>
+				<td>table data</td>
+			<tr>
+					<td>table data</td>
+					<td>table data</td>
+					<td>table data</td>
+					<td>table data</td>
+			<tr>
+					<td>table data</td>
+					<td>table data</td>
+					<td>table data</td>
+					<td>table data</td>
+			</tr>
+		</table>
+
+	</body>
+
+</html>

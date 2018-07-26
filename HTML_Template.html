@@ -1,0 +1,190 @@
+<!DOCTYPE=html>
+<html lang="en">
+
+<!-- Help: https://www.w3schools.com/css/ -->
+
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HTML_template</title>
+        <style>
+            :root {
+                
+                /* COLORS */
+
+                --color-1: hsl(0, 0%, 10%);
+                --color-2: hsl(0, 0%, 40%);
+                --color-3: hsl(0, 0%, 60%);
+                --color-4: hsl(0, 0%, 80%);
+                --color-5: hsl(0, 0%, 90%);
+                --color-6: red;
+                --color-7: white;
+            }
+            * {margin: 0;}
+
+            body {
+                font-family: Verdana, sans-serif;
+                font-size: 100%;
+                background-color: var(--color-7, white);
+            }
+            header {
+                background-color: var(--color-5, lightgrey);
+                color: var(--color-1, black);
+                text-align: center;
+            }
+            h1 {padding: 20px 30px 0;}
+            h2 {padding: 10px;}
+            div.navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                overflow: auto;
+                background-color: var(--color-2, grey);
+                margin: 30px 0;
+                position: sticky; /* Doesn't work yet, navbar isn't sticky */
+                top: 0;
+            }
+            .navbar-dropdown {
+                /*position: relative;*/
+                display: inline-block;
+            }
+            .navbar a, .navbar-dropdown-btn {
+                color: var(--color-7, white);
+                padding: 20px 20px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .navbar a:hover, .navbar-dropdown-btn:hover {
+                background-color: var(--color-3, lightgrey);
+                color: var(--color-1, black);
+            }
+            .navbar a:active, .navbar-dropdown-btn:active {
+                background-color: var(--color-6, red);
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                background-color: var(--color-3, lightgrey);
+                min-width: 80px;
+                box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                padding: 20px 20px;
+                text-decoration: none;
+                display: block;
+            }
+            .navbar-dropdown:hover .dropdown-content {display: block;}
+
+            .rowcontainer {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .maincolumn {
+                flex: 80%;
+                background-color: var(--color-7, white);
+                color: var(--color-1, black);
+            }
+            .sidecolumn {
+                flex: 20%;
+                background-color: var(--color-4, lightgrey);
+                color: var(--color1, black);
+            }
+
+            footer {
+                background-color: var(--color-2, darkgrey);
+                color: var(--color-7, white);
+                text-align: center;
+                padding: 20px 20px;
+            }
+
+            /* Responsive layout - When the screen is less than 700px wide, make the two columns stack on top of each other: */
+            @media screen and (max-width: 700px) {
+                .rowcontainer {flex-direction: column;}
+            }
+
+            a {
+                text-decoration: none;
+                font-style: bold;
+                color: inherit;
+                font-weight: bold;
+            }
+            p {
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <!-- HEADER -->
+        
+        <!-- Navigation bar, Search section, Heading elements, logo or icon. Display:inline? -->
+        <header>
+            <h1>Website name</h1>
+            <h2>Subtitle</h2>
+            <p><i>Awesome website. You'll love it.</i> (The New York Times)</p>
+
+            <!-- NAVIGATION BAR -->
+
+            <div class="navbar">
+                <!-- Navigation bar left -->
+                <div>
+                    <a href="#link">Link</a>
+                    <a href="#link">Link</a>
+                    <a href="#link">Link</a>
+                    <a href="#link">Link</a>
+                </div>
+                <!-- Navigation bar right, Dropdown menu -->
+                <div>
+                    <div class="navbar-dropdown">
+                        <div class="navbar-dropdown-btn">EN</div>
+                        <div class="dropdown-content">
+                            <a href="#EN">EN</a>
+                            <a href="#DE">DE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- BODY -->
+
+        <div class="rowcontainer">
+
+            <!-- MAIN COLUMN -->
+
+            <div class="maincolumn">
+                <h3>TITLE HEADING</h3>
+                <h4>Title description</h4>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+
+            <!-- SIDE COLUMN -->
+
+            <div class="sidecolumn">
+                <h2>About me</h2>
+                <h5>Did you already know...</h5>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <!-- Copyright, Links to Privacy policy and Terms of Services-->
+
+        <footer>
+
+            <p>Copyright © Jan-Patrick Tyra </p>
+            <p>
+                <a href="#privacypolicy">Privacy policy</a> |       <!-- Datenschutzbestimmungen -->
+                <a href="#termsofservices">Terms of Services</a> | <!-- AGB -->
+                <a href="#impressum">Impressum</a>                  <!-- Impressum -->
+            </p>
+        </footer>
+    </body>
+</html>

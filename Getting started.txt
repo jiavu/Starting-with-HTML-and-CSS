@@ -1,0 +1,25 @@
+Basics of html
+https://www.youtube.com/watch?v=PlxWf493en4
+
+Gut zum Nachschlagen von HTML tags:
+http://www.myhtml5tutorials.com/index.html
+
+(interactive Tutorial)
+https://learn.freecodecamp.org/
+
+
+https://www.w3schools.com/
+
+
+Check out:
+https://codepen.io/
+(Social development environment for front-end designers and developers.)
+
+
+
+===================
+JavaScript:
+
+javascript.info
+
+https://programmingwithmosh.com/ (What is JavaScript?) 48 Min
